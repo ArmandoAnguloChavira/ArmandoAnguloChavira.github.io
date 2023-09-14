@@ -14,6 +14,7 @@
     <script src="jspsych/dist/plugin-fullscreen.js"></script>
     <script src="jspsych/dist/plugin-instructions.js"></script>
     <script src="jspsych/stimuli.js"></script>
+    <script src="jspsych/dist/plugin-preload.js"></script>
     <link href="jspsych/dist/jspsych.css" rel="stylesheet" type="text/css"/>
 </head>
 <body></body>
@@ -41,7 +42,7 @@
     });
 
 
-/*     var consent = {
+     var consent = {
         type: jsPsychHtmlButtonResponse,
         stimulus: '<p style="font-size:20px;"><strong>CONSENTIMIENTO INFORMADO</strong></p>' + '<div style="text-align: justify;">'+
               '<p>Por medio del presente acepto participar en el proyecto de investigación: <strong>"Normas de palabras afectivas en población mexicana"</strong>. <br>Este estudio tiene como objetivo estudiar las emociones y cómo las personas responden a diferentes tipos de palabras.</p>' +
@@ -119,7 +120,7 @@
     button_label_previous: 'Previo',
     button_label_next: 'Siguiente',
     }
-    timeline.push(instruc); */
+    timeline.push(instruc);
  
     var valencia_likert_scale = [
                  '<img src="SAM/_valence-5.svg">','', 
@@ -210,7 +211,12 @@
       data:{stimulus:"Ending"}
     }
 
-    timeline.push(end_exp); 
+    timeline.push(end_exp);
+
+    var preload = {
+        type: jsPsychPreload,
+        auto_preload: true
+    }
 
     jsPsych.run(timeline); 
 

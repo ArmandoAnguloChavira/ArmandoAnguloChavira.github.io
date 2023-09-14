@@ -51,7 +51,7 @@
               '<ul><li>Este estudio no prevé repercusiones físicas ni psicológicas.</li>' +
               '<li>Los datos obtenidos serán usados sólo para fines de investigación.</li></ul>' +
               '<p>Manifiesto mi libre decisión, consciente y voluntaria de aceptar participar en esta investigación.</p>',
-        choices: ['Acepto', 'No acepto'],
+        choices: ['<strong>Acepto</strong>', 'No acepto'],
         on_finish: function() {
             var data = jsPsych.data.get().last(1).values()[0];
             if(data.response== 1){
@@ -123,11 +123,11 @@
     timeline.push(instruc);
  
     var valencia_likert_scale = [
-                 '<img src="SAM/_valence-5.svg">','', 
-                 '<img src="SAM/_valence-4.svg">','', 
-                 '<img src="SAM/_valence-3.svg">','', 
-                 '<img src="SAM/_valence-2.svg">','',  
-                 '<img src="SAM/_valence-1.svg">'
+                 '<img src="SAM/valence-5.svg">','', 
+                 '<img src="SAM/valence-4.svg">','', 
+                 '<img src="SAM/valence-3.svg">','', 
+                 '<img src="SAM/valence-2.svg">','',  
+                 '<img src="SAM/valence-1.svg">'
         ];
 
         

@@ -205,14 +205,8 @@
     var end_exp = {
         type: jsPsychHtmlButtonResponse,
         stimulus: '<img src="IMG/UNAM.svg" style = "max-width:100%; height:auto;"></img><p style= "font-size:30px;"><strong>¡Muchas gracias por participar!</strong></p><p style= "font-size:20px;">Cualquier duda o aclaración puede comunicarse con el Dr. Luis Llamas Alonso al correo electronico: luigimon@gmail.com.</p>',
-        choices: ['Enviar respuestas'],
-        on_finish: function() {
-            var data = jsPsych.data.get().last(1).values()[0];
-            if(data.response== 0){
-                jsPsych.endExperiment('Puede cerrar el navegador.');
-            }
-      },
-      data:{stimulus:"Ending"}
+        choices: ['Finalizar'],
+        data:{stimulus:"Ending"}
     }
 
     timeline.push(end_exp);

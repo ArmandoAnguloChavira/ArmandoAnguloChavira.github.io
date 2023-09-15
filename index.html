@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Palabras afectivas</title>
     <script src="jspsych/dist/jspsych.js"></script>
+    <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script>
+    <link rel="stylesheet" href="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jspsych/dist/plugin-html-button-response.js"></script>
     <script src="jspsych/dist/plugin-survey-text.js"></script>
     <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
@@ -21,9 +24,10 @@
 <script>
         // initialize jsPsych
     var jsPsych = initJsPsych({
-      on_finish: function() {
-        jsPsych.data.get().localSave('csv','ekstra.csv');
-      }
+        on_finish: function () {
+            url = "https://script.google.com/macros/s/AKfycbzWarG1igduvFgcS8noKcvJ_RCX_ajtlYJQ1cOrCpTFtCrlaFlqSv-Cg2JJDQciFs4ePA/exec";
+            jsPsychSheet.uploadData(url, jsPsych.data.get().csv())
+        }
     });
 
     // create timeline 

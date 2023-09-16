@@ -46,7 +46,7 @@
     });
 
 
-     var consent = {
+    /* var consent = {
         type: jsPsychHtmlButtonResponse,
         stimulus: '<p style="font-size:20px;"><strong>CONSENTIMIENTO INFORMADO</strong></p>' + '<div style="text-align: justify;">'+
               '<p>Por medio del presente acepto participar en el proyecto de investigación: <strong>"Normas de palabras afectivas en población mexicana"</strong>. <br>Este estudio tiene como objetivo estudiar las emociones y cómo las personas responden a diferentes tipos de palabras.</p>' +
@@ -124,7 +124,7 @@
     button_label_previous: 'Previo',
     button_label_next: 'Siguiente',
     }
-    timeline.push(instruc);
+    timeline.push(instruc); */
  
     var valencia_likert_scale = [
                  '<img src="SAM/valence-5.svg">','', 
@@ -167,7 +167,7 @@
         data:{stimulus:jsPsych.timelineVariable("Word")}
     }
 
-    var word_practice = {
+   /* var word_practice = {
         timeline: [word_stim],
         timeline_variables: [
             {"Word": "perro"},
@@ -177,7 +177,7 @@
         randomize_order: false,
         repetitions: 1
     }
-    timeline.push(word_practice); 
+    timeline.push(word_practice); */ 
 
     var instruc_2 = {
         type: jsPsychInstructions,

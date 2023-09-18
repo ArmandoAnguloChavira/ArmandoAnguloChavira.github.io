@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>Palabras afectivas</title>
     <script src="jspsych/dist/jspsych.js"></script>
-    <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script>
+<!--     <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script>
     <link rel="stylesheet" href="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <script src="jspsych/dist/plugin-html-button-response.js"></script>
     <script src="jspsych/dist/plugin-survey-text.js"></script>
     <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
@@ -23,20 +24,16 @@
 <body></body>
 <script>
         // initialize jsPsych
-    var jsPsych = initJsPsych({
-        on_finish: function () {
-            url = "https://script.google.com/macros/s/AKfycbw0-UVZN7aa3gQycJ8Exo1-6AwZtooZYBfgjj2FQsAuimGH7XOMelLKxxN-Zq3W6FAhCA/exec";
-            jsPsychSheet.uploadData(url, jsPsych.data.get().csv())
-        }
-    });
+    var jsPsych = initJsPsych();
 
     // create timeline 
     var timeline = [];
 
     // Subject ID
-    var rand_subject_id = jsPsych.randomization.randomID(8);
-
-    jsPsych.data.addProperties({ID: rand_subject_id});
+    
+    const subject_id = jsPsych.randomization.randomID(10);
+    const filename = `${subject_id}.csv`; 
+    jsPsych.data.addProperties({ID: subject_id});
 
     timeline.push({
         type: jsPsychFullscreen,
@@ -211,6 +208,17 @@
 
     timeline.push(end_exp);
 
+    
+    const save_data = {
+        type: jsPsychPipe,
+        action: "save",
+        experiment_id: "HC2VxF4eE1Uq",
+        filename: filename,
+        data_string: ()=>jsPsych.data.get().csv()
+    };
+
+    timeline.push(save_data);
+    
     var preload = {
         type: jsPsychPreload,
         auto_preload: true

@@ -6,7 +6,7 @@
     <script src="jspsych/dist/jspsych.js"></script>
     <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script>
     <link rel="stylesheet" href="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jspsych/dist/plugin-html-button-response.js"></script>
     <script src="jspsych/dist/plugin-survey-text.js"></script>
     <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
@@ -25,7 +25,7 @@
         // initialize jsPsych
     var jsPsych = initJsPsych({
         on_finish: function () {
-            url = "https://script.google.com/macros/s/AKfycby0pHcOc-zx2HidbwVaVLYP_C8MLLnlmmctZ68UO1XhRUh-oakvn0F7aGwBc31mz8Boiw/exec";
+            url = "https://script.google.com/macros/s/AKfycbw0-UVZN7aa3gQycJ8Exo1-6AwZtooZYBfgjj2FQsAuimGH7XOMelLKxxN-Zq3W6FAhCA/exec";
             jsPsychSheet.uploadData(url, jsPsych.data.get().csv())
         }
     });

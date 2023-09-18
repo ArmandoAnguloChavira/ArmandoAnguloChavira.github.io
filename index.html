@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <title>Palabras afectivas</title>
     <script src="jspsych/dist/jspsych.js"></script>
-<!--     <script src="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.js"></script>
-    <link rel="stylesheet" href="https://brain2ai.github.io/jsPsychSheet/jspsychsheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe"></script>
     <script src="jspsych/dist/plugin-html-button-response.js"></script>
     <script src="jspsych/dist/plugin-survey-text.js"></script>
@@ -65,7 +62,7 @@
     timeline.push(consent); 
     
 
-   /* var birthdate = {
+    var birthdate = {
         type: jsPsychSurveyHtmlForm,
         preamble: 'Fecha de nacimiento:',
         html: '<p><input type="date" id="dob_1" name="dob_2" required></p>',
@@ -121,7 +118,7 @@
     button_label_previous: 'Previo',
     button_label_next: 'Siguiente',
     }
-    timeline.push(instruc); */
+    timeline.push(instruc);
  
     var valencia_likert_scale = [
                  '<img src="SAM/valence-5.svg">','', 
@@ -164,7 +161,7 @@
         data:{stimulus:jsPsych.timelineVariable("Word")}
     }
 
-   /* var word_practice = {
+    var word_practice = {
         timeline: [word_stim],
         timeline_variables: [
             {"Word": "perro"},
@@ -174,7 +171,7 @@
         randomize_order: false,
         repetitions: 1
     }
-    timeline.push(word_practice); */ 
+    timeline.push(word_practice); 
 
     var instruc_2 = {
         type: jsPsychInstructions,
@@ -194,7 +191,7 @@
         repetitions: 1,
         sample: {
         type: 'without-replacement',
-        size: 2
+        size: 10
     }    
     }
     timeline.push(word_trial); 
